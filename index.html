@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Open Source Button Css Generator, Easy to edit and get css code.">
+      <meta name="keywords" content="HTML, CSS, Javascript, Button Css, Button Css Generator">
+      <meta name="author" content="Tanuj Sharma">
+
+      <!-- google font -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Roboto:wght@100;300;400;500;700;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+      <title>Button Style Generator | Tanuj Sharma</title>
+
+      <link rel="stylesheet" href="src/css/style.css">
+   </head>
+   <body>
+      <style>#loadingPage{position: absolute;z-index: 10000;width: 100vw;height: 100vh;display: flex;align-items: center;justify-content: center;background-color: white;}#spinner{width: 25px;height: 25px;border-radius: 50%;border: 6px solid rgba(0, 0, 0, 0.082);border-right: 6px solid rgb(65, 141, 255);animation: spin 2.5s linear infinite;}@keyframes spin {0% { transform: rotate(0deg); }100%{ transform: rotate(360deg);}}
+      </style>
+      <div id="loadingPage"><div id="spinnerHolder"><div id="spinner"></div></div></div>
+      <div id="screen_error">
+         <h1>Oops! Screen is Small</h1>
+         <p>Please view on bigger screen. More than 600px width.</p>
+      </div>
+
+      <div id="page">
+
+         <div id="header" class="section">
+            <div id="headerItemContainer">
+               <h1>Button Css Generator</h1>
+               <span id="pageLinks">
+                  <a href="http://github.com/tanujsharma911" target="_blank"><ion-icon id="github" name="logo-github"></ion-icon></a>
+               </span>
+            </div>
+         </div>
+
+         <!-- Code and Presets -->
+         <div id="left" class="section">
+            <div id="leftStateHolder">
+               <input class="state" type="radio" name="leftState" id="codeState">
+               <label class="stateLabel" for="codeState">Code</label>
+               <input class="state" type="radio" name="leftState" id="presetsState" checked>
+               <label class="stateLabel" for="presetsState">Presets</label>
+            </div>
+            <div id="codeStateSection">
+               <header>
+                  <button id="copy_btn">
+                     <ion-icon id="copy_icon" name="copy"></ion-icon>
+                  </button>
+               </header>
+               <div id="btnStyleCode">
+                  <span class="btn_class">.btn{</span>
+                  <div id="btn_main_css">
+font-size: <span id="font_size_code"></span>; <br>
+text-align: <span id="text_align_code"></span>; <br>
+font-family: '<span id="font_code"></span>'; <br>
+font-weight: <span id="font_weight_code"></span>; <br>
+width: <span id="width_code"></span>; <br>
+height: <span id="height_code"></span>; <br>
+color: <span id="font_color_code"></span>; <br>
+background-color: <span id="bg_color_code"></span>; <br>
+border: <span id="border_weight_code"></span> solid <span id="border_color_code"></span>; <br>
+border-radius: <span id="border_radius_code"></span>; <br>
+text-shadow: <span id="textshadow_code"></span>; <br>
+box-shadow: <span id="boxshadow_code">; <br>
+                  </div>
+                  <div id="btn_main_css_2">
+position: relative; <br>
+top: <span id="top_code"></span>; <br>
+left: <span id="left_code"></span>;  <br>
+transform: <span id="transform_code"></span>;
+                  </div>
+                  
+                  <span class="btn_class">}</span>
+               </div>
+            </div>
+            <div id="presetStateSection">
+               <div id="presetContainer">
+                  <button class="presetBtn" id="presetBtn1">Click Me</button>
+                  <button class="presetBtn" id="presetBtn2">Click Me</button>
+                  <button class="presetBtn" id="presetBtn3">Click Me</button>
+                  <button class="presetBtn" id="presetBtn4">Click Me</button>
+                  <button class="presetBtn" id="presetBtn5">Button</button>
+                  <button class="presetBtn" id="presetBtn6">Button</button>
+                  <button class="presetBtn" id="presetBtn7">Button</button>
+                  <button class="presetBtn" id="presetBtn8">Button</button>
+                  <button class="presetBtn" id="presetBtn9">Button</button>
+                  <button class="presetBtn" id="presetBtn10">Button</button>
+                  <button class="presetBtn" id="presetBtn11">Hover Me</button>
+                  <button class="presetBtn" id="presetBtn12">Hover Me</button>
+                  <button class="presetBtn" id="presetBtn13">HOVER ME</button>
+                  <button class="presetBtn" id="presetBtn14">CLICK ME</button>
+                  <button class="presetBtn" id="presetBtn15">Button</button>
+                  <button class="presetBtn" id="presetBtn16">Button</button>
+               </div>
+            </div>
+         </div>
+
+         <!-- Main Area -->
+         <div id="main" class="section">
+            <button id="editable-btn">Edit Me</button>
+         </div>
+
+         <!-- Editor -->
+         <div id="right" class="section">
+
+            <div id="editorStateHolder">
+               <input class="state" type="radio" name="editorState" id="normalState"
+                  checked>
+               <label class="stateLabel" for="normalState">Normal</label>
+               <input class="state" type="radio" name="editorState" id="hoverState">
+               <label class="stateLabel" for="hoverState">Hover</label>
+               <input class="state" type="radio" name="editorState" id="click">
+               <label class="stateLabel" for="click">Click</label>
+            </div>
+
+            <section id="normalStateSection">
+
+               <fieldset id="textSetting">
+                  <legend>Text Setting</legend>
+
+                  <!-- Button Text -->
+                  <label class="textLabel" for="text">Button Text</label>
+                  <input type="text" id="text" value="Edit Me" oninput="btnText()" maxlength="30">
+
+                  <!-- Font Size -->
+                  <label class="textLabel" for="fontSize">Font Size</label>
+                  <div id="fontSizeContanier">
+                     <input type="number" oninput="btnFontSize()" value="13" min="0" max="120" id="fontSize">
+                     <span>px</span>
+                  </div>
+
+                  <!-- Text Align -->
+                  <span>Text Align</span>
+                  <div id="textAlignContainer">
+
+                     <input type="radio" oninput="textAlign()" name="textAlign" id="centerTextAlign" class="display-none" checked>
+                     <label class="textAlign" id="centerTextAlignLabel" for="centerTextAlign" title="Align Text Center">
+                        <ion-icon id="centerTextAlign" class="textAlignIcon" name="funnel"></ion-icon>
+                     </label>
+                     
+                     <input type="radio" oninput="textAlign()" name="textAlign" id="leftTextAlign" class="display-none">
+                     <label class="textAlign" for="leftTextAlign" id="leftTextAlignLabel" title="Align Text Left">
+                        <ion-icon id="leftTextAlignIcon" class="textAlignIcon" name="list"></ion-icon>
+                     </label>
+                     
+                     <input type="radio" oninput="textAlign()" name="textAlign" id="rightTextAlign" class="display-none">
+                     <label class="textAlign" for="rightTextAlign" id="rightTextAlignLabel" title="Align Text Right">
+                        <ion-icon id="rightTextAlignIcon" class="textAlignIcon" name="list"></ion-icon
+                           ></label>
+                     
+                     
+                  </div>
+                  
+                  <!-- Font -->
+                  <label class="textLabel" for="font">Font</label>
+                  <div id="fontAllItemContainer">
+                     <div id="fontInputContainer" class="mb-10">
+                        <input type="text" id="fontInput" value="Arial">
+                        <div id="moreFontIconContainer">
+                           <ion-icon name="more" id="moreFonts"></ion-icon>
+                           <ion-icon name="close" id="closeMoreFonts"></ion-icon>
+                        </div>
+                     </div>
+                     <div id="fontsContainer">
+                        <input type="radio" oninput="setTextFont('Arial')" name="font" id="arial" class="display-none"  checked>
+                        <label id="font1" class="fonts" for="arial">Arial</label>
+
+                        <input type="radio" oninput="setTextFont('Helvetica')" name="font" id="helvetica" class="display-none">
+                        <label id="font2" class="fonts" for="helvetica">Helvetica</label>
+
+                        <input type="radio" oninput="setTextFont('Times New Roman')" name="font" id="timesNewRoman" class="display-none">
+                        <label id="font3" class="fonts" for="timesNewRoman">Times New Roman</label>
+
+                        <input type="radio" oninput="setTextFont('Georgia')" name="font" id="georgia" class="display-none">
+                        <label id="font4" class="fonts" for="georgia">Georgia</label>
+
+                        <input type="radio" oninput="setTextFont('Sarif')" name="font" id="sarif" class="display-none">
+                        <label id="font5" class="fonts" for="sarif">Sarif</label>
+
+                        <input type="radio" oninput="setTextFont('Sans Sarif')" name="font" id="sanaSarif" class="display-none">
+                        <label id="font6" class="fonts" for="sanaSarif">Sans Sarif</label>
+
+                        <input type="radio" oninput="setTextFont('Open Sans')" name="font" id="openSans" class="display-none">
+                        <label id="font7" class="fonts" for="openSans">Open Sans</label>
+
+                        <input type="radio" oninput="setTextFont('Impact')" name="font" id="impact" class="display-none">
+                        <label id="font8" class="fonts" for="impact">Impact</label>
+
+                        <input type="radio" oninput="setTextFont('Roboto')" name="font" id="roboto" class="display-none">
+                        <label id="font9" class="fonts" for="roboto">Roboto</label>
+                     </div>
+                  </div>
+
+                  <!-- Font Weight -->
+                  <label class="textLabel" for="font">Font Weight</label>
+
+                  <div id="fontWeightAllItemContainer">
+                     <div id="fontWeightInputContainer">
+                        <input type="text" id="fontWeightInput" value="Normal" disabled>
+                        <div id="moreFontWeightIconContainer">
+                           <ion-icon name="more" id="moreFontsWeight"></ion-icon>
+                           <ion-icon name="close" id="closeMoreFontsWeight"></ion-icon>
+                        </div>
+                     </div>
+
+                     <div id="fontsWeightContainer">
+                        <input type="radio" oninput="setFontWeight('lighter')" name="fontWeight" id="lighterFontWeight" class="display-none"  checked>
+                        <label id="fontWeight1" class="fontWeight" for="lighterFontWeight">Lighter</label>
+
+                        <input type="radio" oninput="setFontWeight('light')" name="fontWeight" id="lightFontWeight" class="display-none">
+                        <label id="fontWeight2" class="fontWeight" for="lightFontWeight">Light</label>
+
+                        <input type="radio" oninput="setFontWeight('normal')" name="fontWeight" id="normalFontWeight" class="display-none" checked>
+                        <label id="fontWeight3" class="fontWeight" for="normalFontWeight">Normal</label>
+
+                        <input type="radio" oninput="setFontWeight('bold')" name="fontWeight" id="boldFontWeight" class="display-none">
+                        <label id="fontWeight4" class="fontWeight" for="boldFontWeight">Bold</label>
+
+                        <input type="radio" oninput="setFontWeight('bolder')" name="fontWeight" id="bolderFontWeight" class="display-none">
+                        <label id="fontWeight5" class="fontWeight" for="bolderFontWeight">Bolder</label>
+                        
+                     </div>
+                  </div>
+               </fieldset>
+               <fieldset>
+                  <legend class="dialog_header">Size</legend>
+
+                  <!-- Width -->
+                  <div class="label_numberPreview">
+                     <span>Width</span>
+                     <input type="number" min="0" max="600" oninput="changeRangeOnNumberPreview('width', 'widthNumberPreview')" class="numberPreview" id="widthNumberPreview" value="65">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     <input type="range" oninput="btnWidth()" id="width" step="1" min="0" max="600" value="65">
+                  </div>
+
+                  <!-- Height -->
+                  <div class="label_numberPreview mt-10">
+                     <span>Height</span>
+                     <input oninput="changeRangeOnNumberPreview('height', 'heightNumberPreview')" type="number" min="0" max="300" class="numberPreview" id="heightNumberPreview" value="27">
+                  </div>
+
+                  <div class="inputRange_upDownBtn mb-10">
+                     
+                     <input type="range" oninput="btnHeight()" id="height" step="1" min="0" max="300" value="27">
+                  </div>
+               </fieldset>
+
+               <fieldset>
+                  <legend class="dialog_header">Colour</legend>
+                  
+                  <!-- Font Colour -->
+                  <label class="colourLabel" for="fontColour">Font Colour
+                     <div class="colourPreview" id="fontColourPreview"></div>
+                  </label>
+                  <input type="color" id="fontColour" oninput="btnFontColour()">
+
+                  <!-- Button Colour -->
+                  <label class="colourLabel" for="buttonColour">Button Colour <div class="colourPreview" id="buttonColourPreview"> </div></label>
+                  <input type="color" id="buttonColour" oninput="btnColour()">
+               </fieldset>
+
+               <fieldset id="border_fieldset">
+                  <legend class="dialog_header">Border
+                     <input type="checkbox" oninput="setFieldsetDisEna('border_fieldset')" class="switch" id="switch1" checked>
+                     <label class="switch-btn" for="switch1">
+                        <div class="switch-circle"></div>
+                     </label>
+                  </legend>
+                  
+                  <!-- Border Width -->
+                  <div class="label_numberPreview">
+                     <span>Border Width</span>
+                     <input type="number" min="0" max="50" oninput="changeRangeOnNumberPreview('borderWidth', 'borderWidthNumberPreview')" class="numberPreview" id="borderWidthNumberPreview" value="1">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     <input type="range" id="borderWidth" step="1" min="0" max="50" oninput="btnBorderWidth()" value="1">
+                  </div>
+
+                  <!-- Border Radius -->
+                  <div class="label_numberPreview mt-10">
+                     <span>Border Radius</span>
+                     <input type="number" min="0" max="150" oninput="changeRangeOnNumberPreview('borderRadius', 'borderRadiusNumberPreview')" class="numberPreview" id="borderRadiusNumberPreview" value="2">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="borderRadius" step="1" min="0" max="150" oninput="btnBorderRadius()" value="2">
+                  </div>
+
+                  <!-- Border Colour -->
+                  <label class="colourLabel" for="borderColour">Border Colour <div class="colourPreview" id="borderColourPreview"> </div></label>
+                  <input type="color" id="borderColour" oninput="btnBorderColour()">
+               </fieldset>
+
+               <fieldset id="texShadow_fieldset" disabled>
+                  <legend class="dialog_header">Text Shadow
+                     <input type="checkbox" oninput="setFieldsetDisEna('texShadow_fieldset')" class="switch" id="switch2">
+                     <label class="switch-btn" for="switch2">
+                        <div class="switch-circle"></div>
+                     </label>
+                  </legend>
+
+                  <!-- Offset X -->
+                  <div class="label_numberPreview">
+                     <span>Offset X</span>
+                     <input type="number" min="-150" max="150" oninput="changeRangeOnNumberPreview('textOffsetX', 'textShadowOffsetX_NumberPreview')" class="numberPreview" id="textShadowOffsetX_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="textOffsetX" oninput="setTextShadowOffsetX()" step="1" min="-150" max="150" value="0">
+                  </div>
+
+                  <!-- Offset Y -->
+                  <div class="label_numberPreview mt-10">
+                     <span>Offset Y </span>
+                     <input type="number" min="-150" max="150" oninput="changeRangeOnNumberPreview('textOffsetY', 'textShadowOffsetY_NumberPreview')" class="numberPreview" id="textShadowOffsetY_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="textOffsetY" oninput="setTextShadowOffsetY()" step="1" min="-150" max="150" value="0">
+                  </div>
+
+                  <!-- Blur -->
+                  <div class="label_numberPreview mt-10">
+                     <span>Blur</span>
+                     <input type="number" min="0" max="100" oninput="changeRangeOnNumberPreview('textShadowBlur', 'textShadowBlur_numberPreview')" class="numberPreview" id="textShadowBlur_numberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="textShadowBlur" oninput="setTextShadowBlur()" step="0.5" min="0" max="100" value="0">
+                  </div>
+
+                  <label class="colourLabel" for="textShadowColour">Shadow Colour <div class="colourPreview" id="textShadowColourPreview"> </div></label>
+                  <input type="color" id="textShadowColour" oninput="setTextShadowColour()">
+               </fieldset>
+
+               <fieldset id="btnShadow_fieldset" disabled>
+                  <legend class="dialog_header">Button Shadow
+                     <input type="checkbox" oninput="setFieldsetDisEna('btnShadow_fieldset')" class="switch" id="switch3">
+                     <label class="switch-btn" for="switch3">
+                        <div class="switch-circle"></div>
+                     </label>
+                  </legend>
+
+                  <!-- Button Shadow Offset X -->
+                  <div class="label_numberPreview">
+                     <span>Offset X</span>
+                     <input type="number" min="-150" max="150" oninput="changeRangeOnNumberPreview('btnOffsetX', 'btnShadowOffsetX_NumberPreview')" class="numberPreview" id="btnShadowOffsetX_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="btnOffsetX" oninput="setBtnShadowOffsetX()" step="1" min="-150" max="150" value="0">
+                  </div>
+
+                  <!-- Button Shadow Offset Y -->
+                  <div class="label_numberPreview mt-10">
+                     <span>Offset Y</span>
+                     <input type="number" min="-100" max="100" oninput="changeRangeOnNumberPreview('btnOffsetY', 'btnShadowOffsetY_NumberPreview')" class="numberPreview" id="btnShadowOffsetY_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="btnOffsetY" oninput="setBtnShadowOffsetY()" step="1" min="-100" max="100" value="0">
+                  </div>
+
+                  <!-- Button Shadow Blur -->
+                  <div class="label_numberPreview mt-10">
+                     <span>Blur</span>
+                     <input type="number" min="0" max="100" oninput="changeRangeOnNumberPreview('btnShadowBlur', 'btnShadowBlur_NumberPreview')" class="numberPreview" id="btnShadowBlur_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="btnShadowBlur" oninput="setBtnShadowBlur()" step="0.5" min="0" max="100" value="0">
+                  </div>
+
+                  <!-- Button Shadow Spread-->
+                  <div class="label_numberPreview mt-10">
+                     <span>Spread</span>
+                     <input type="number" min="-10" max="100" oninput="changeRangeOnNumberPreview('btnShadowBlur', 'btnShadowSpread_NumberPreview')" class="numberPreview" id="btnShadowSpread_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     
+                     <input type="range" id="btnShadowSpread" oninput="setBtnShadowSpread()" step="0.5" min="-10" max="100" value="0">
+                  </div>
+
+                  <label class="colourLabel" for="boxShadowColour">Shadow Colour <div class="colourPreview" id="boxShadowColourPreview"> </div></label>
+                  <input type="color" id="boxShadowColour" oninput="setBtnShadowColour()">
+               </fieldset>
+
+               <!-- Transform Button -->
+               <fieldset id="transform_fieldset" disabled>
+                  <legend class="dialog_header">Transform
+                     <input type="checkbox" oninput="setFieldsetDisEna('transform_fieldset')" class="switch" id="switch4">
+                     <label class="switch-btn" for="switch4">
+                        <div class="switch-circle"></div>
+                     </label>
+                  </legend>
+
+                  <!-- Transform X axis-->
+                  <div class="label_numberPreview mt-10">
+                     <span>X Axis</span>
+                     <input type="number" min="-220" max="220" oninput="changeRangeOnNumberPreview('btnTransformX', 'btnTransformX_NumberPreview')" class="numberPreview" id="btnTransformX_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     <input type="range" id="btnTransformX" oninput="setBtnTransformX()" step="1" min="-220" max="220" value="0">
+                  </div>
+
+                  <!-- Transform Y axis-->
+                  <div class="label_numberPreview mt-10">
+                     <span>Y Axis</span>
+                     <input type="number" min="-220" max="220" oninput="changeRangeOnNumberPreview('btnTransformY', 'btnTransformY_NumberPreview')" class="numberPreview" id="btnTransformY_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn mb-10">
+                     <input type="range" id="btnTransformY" oninput="setBtnTransformY()" step="1" min="-220" max="220" value="0">
+                  </div>
+               </fieldset>
+
+               <!-- Rotate Button -->
+               <fieldset id="rotate_fieldset" disabled>
+                  <legend class="dialog_header">Rotate
+                     <input type="checkbox" oninput="setFieldsetDisEna('rotate_fieldset')" class="switch" id="switch5">
+                     <label class="switch-btn" for="switch5">
+                        <div class="switch-circle"></div>
+                     </label>
+                  </legend>
+
+                  <!-- Perspective-->
+                  <div class="label_numberPreview">
+                     <span>Perspective</span>
+                     <input type="number" min="0" max="1000" oninput="changeRangeOnNumberPreview('btnPerspective', 'btnPerspective_NumberPreview')" class="numberPreview" id="btnPerspective_NumberPreview" value="300">
+                  </div>
+
+                  <div class="inputRange_upDownBtn mb-10">
+                     <input type="range" id="btnPerspective" oninput="setBtnPerspective()" step="1" min="0" max="1000" value="300">
+                  </div>
+
+                  <!-- Rotate X axis-->
+                  <div class="label_numberPreview">
+                     <span>X Axis</span>
+                     <input type="number" min="0" max="360" oninput="changeRangeOnNumberPreview('btnRotateX', 'btnRotateX_NumberPreview')" class="numberPreview" id="btnRotateX_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     <input type="range" id="btnRotateX" oninput="setBtnRotateX()" step="1" min="0" max="360" value="0">
+                  </div>
+
+                  <!-- Rotate Y axis-->
+                  <div class="label_numberPreview mt-10">
+                     <span>Y Axis</span>
+                     <input type="number" min="0" max="360" oninput="changeRangeOnNumberPreview('btnRotateY', 'btnRotateY_NumberPreview')" class="numberPreview" id="btnRotateY_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn">
+                     <input type="range" id="btnRotateY" oninput="setBtnRotateY()" step="1" min="0" max="360" value="0">
+                  </div>
+
+                  <!-- Rotate Z axis-->
+                  <div class="label_numberPreview mt-10">
+                     <span>Z Axis</span>
+                     <input type="number" min="0" max="360" oninput="changeRangeOnNumberPreview('btnRotateZ', 'btnRotateZ_NumberPreview')" class="numberPreview" id="btnRotateZ_NumberPreview" value="0">
+                  </div>
+
+                  <div class="inputRange_upDownBtn mb-10">
+                     <input type="range" id="btnRotateZ" oninput="setBtnRotateZ()" step="1" min="0" max="360" value="0">
+                  </div>
+               </fieldset>
+            </section>
+
+            <!-- Hover State of Button -->
+            <section id="hoverStateSection">
+               Underdevelopment
+            </section>
+
+            <!-- Click State of Button -->
+            <section id="clickStateSection">
+               Coming Soon
+            </section>
+
+         </div>
+         <div id="bottom" class="section">
+            <button id="version" onclick="showVersion()">version 1.0 (Beta)</button>
+            <button id="feedbackBtn" onclick="openFeedback()">Feedback</button>
+         </div>
+
+         <dialog id="feedback">
+            <div id="feedback_nav">
+               <h1>Feedback</h1>
+               <button onclick="closeFeedback()" id="feedbackClose">
+                  <ion-icon name="close" id="feedbackCloseIcon"></ion-icon>
+               </button>
+            </div>
+            <form onsubmit="setText('submit_button', 'Sending')" action="https://formspree.io/f/xyyobolr" method="POST" id="form">
+   
+               <div id="form-item-container">
+
+                  <div class="formColumn" id="formColumn1">
+      
+                     <div class="form-item">
+                        <div class="form-item-label">
+                           <label for="name">Your Name</label>
+                        </div>
+                        <input class="form-text" type="text" name="First Name" id="name" placeholder="Your Name" required>
+                     </div>
+         
+                     <div class="form-item">
+                        <div class="form-item-label forms-label-optional">
+                           <label for="views">Your Views</label>
+                           <!-- <label class="optional" for="last-name">Optional</label> -->
+                        </div>
+                        <input class="form-text"  type="text" name="Your Views On Us" id="views" placeholder="Your Views On Us" required>
+                     </div>
+                     
+                     <div class="form-item">
+                        <div class="form-item-label">
+                           <label for="user-email">Your Email</label>
+                        </div>
+                        <input class="form-text"  type="email" name="User Email" id="user-email" placeholder="Your Email" required>
+                     </div>
+
+                     <div class="form-item">
+                        <div class="form-item-label">
+                           <label>Do like are website</label>
+                        </div>
+                        <div id="yes-no-container">
+                           <div id="yes-container">
+                              <input type="radio" name="user happyniess" id="yes">
+                              <label for="yes" id="yes-card">
+                                 <div>
+                                    Yes
+                                 </div>
+                              </label>
+                           </div>
+                           <div id="no-container">
+                              <input type="radio" name="user happyniess" id="no">
+                              <label for="no" id="no-card">
+                                 <div>
+                                    No
+                                 </div>
+                              </label>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+                  <div class="formColumn" id="formColumn2">
+
+                     <div class="form-item">
+                        <div class="form-item-label">
+                           <label for="message">Your Message</label>
+                        </div>
+                        <textarea class="form-text" name="message" id="form_message" placeholder="Your Message" rows="7" required></textarea>
+                     </div>
+                     
+                  </div>
+               </div>
+               <div id="submit_button_div">
+                  <input type="submit" value="Sumit Form" id="submit_button">
+               </div>
+            </form>
+         </dialog>
+
+         <!-- <input type="checkbox" class="switch" id="switch1">
+         <label class="switch-btn" for="switch1">
+         <div class="switch-circle"></div>
+         </label> -->
+      </div>
+      <div id="message">
+         <div id="message_card" class="error">
+            <img id="error_status_img" src="src/img/error.png" alt="">
+            <h2 id="message_tilte">message Name</h2>
+            <p id="message_description">message description</p>
+            <button id="message_seen" onclick="hide_message()">Ok</button>
+         </div>
+      </div>
+      <div id="versionHistoryBg">
+         <div id="main">
+
+            <div id="version_nav">
+               <h1>Version History</h1>
+               <button onclick="closeVersion()" id="versionClose">
+                  <ion-icon name="close" id="versionCloseIcon"></ion-icon>
+               </button>
+            </div>
+
+            <div id="history">
+               <ul id="update_container">
+
+                  <li class="update">
+                     <h3 class="update_version">Version 1.0 (Beta)</h3>
+                     <p class="update_description">First version of Button Css Generator.</p>
+                     <h4 class="update_features_heading">Features</h4>
+                     <ul class="update_features">
+                        <li class="update_features_points">Only normal state added</li>
+                        <li class="update_features_points">16 Preset added</li>
+                        <li class="update_features_points">Can not copy from preset button</li>
+                        <li class="update_features_points">Max width 600px</li>
+                     </ul>
+                     <p class="update_date">Uploaded on 14 april 2022</p>
+                  </li>
+
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <script src="src/js/rightSection.js"></script>
+      <script src="src/js/leftSection.js"></script>
+      <script src="src/js/script.js"></script>
+      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+   </body>
+</html>
